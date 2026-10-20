@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+main{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background:
+    radial-gradient(circle at 15% 20%, #7c3aed 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, #14b8a6 0%, transparent 42%),
+    radial-gradient(circle at 80% 90%, #ec4899 0%, transparent 42%),
+    radial-gradient(circle at 20% 95%, #2563eb 0%, transparent 45%),
+    #0a0e28;
+}
+.glass{
+    background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.40);
+    color: #fff;
+}
+
+.card{    
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 10px;
+    width: 500px;
+    height: 700px;
+    border-radius: 100px; 
+}
+.perfil{
+    margin-top: 20px;
+}
+.ft{
+    background-image: url(img/foto-perfil.jpg);
+    background-size: 275px;
+    background-repeat: 0;
+    background-position: -37px -37px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+.info{    
+    position: relative;
+    margin-top: 50px;
+}
+.div-info{
+    padding: 3px;
+    margin-bottom: 50px;
+    border-bottom: 1px #fff solid;
+
+}
+.text{
+    margin: 0 10px;
+    width: 200px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+
+}
+.text::placeholder{
+    font-size: 17px;
+    text-align: center;
+}
+.text:focus::placeholder {
+    color: transparent;
+}
+
+.info-bottom{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap ;
+    height: 30px;
+    padding: 10px;
+    gap: 30px;  
+    
+}
+.info-bottom div{
+    display: flex;
+    gap: 10px; 
+}
+.info-bottom a{
+    color: #ffffff83;
+}
+
+.btn{
+    position: relative;
+    top: 50px;
+    padding: 10px;
+    width: 120px;
+    height: 40px;
+    border-radius: 100px;
+}
