@@ -11,20 +11,22 @@
         <main>
             <div class="container">
                 <section class="card glass">
-
+                    <h1 class="title">LOGIN</h1>
                     <article class="perfil">
                         <div class="ft"></div>
                     </article>
 
-                    <article class="info">
-                        <form>
+                    <article class="data">
+                        <form id="info">
                             <div class="div-info">
                                 <label for="ipt-email"><i class="fa-regular fa-envelope"></i></label>
-                                <input type="email" placeholder="Digite seu email" id="ipt-email" class="text">
+                                <input type="email" placeholder="Digite seu email" id="ipt-email" class="text" required>
+                                <span class="erro" style="color:red; display: none;">email errado</span>
                             </div>
                             <div class="div-info">
                                 <label for="ipt-senha"><i class="fa-solid fa-unlock"></i></label>
-                                <input type="password" placeholder="Digite sua senha" id="ipt-senha" class="text">
+                                <input type="password" placeholder="Digite sua senha" id="ipt-senha" class="text" required>
+                                <span class="erro" style="color:red; display: none;">senha errada</span>
                             </div>
                         </form>
 
@@ -36,11 +38,7 @@
                             <a href="cadastro.html">Não tem cadastro?</a>
                         </div>
                     </article>
-
-                    <form class="">
-                        <button id="btn-login" class="btn glass" type="submit">ENTRAR</button>
-                    </form>
-
+                    <button id="btn-login" class="btn glass" type="submit" form="info">ENTRAR</button>
                 </section>
             </div>
         </main>

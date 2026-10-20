@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-    <html lang="pt-br">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="cadastro.css">
+        <title>CADASTRO</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <style>
+            .card{
+                width: 600px;
+                height: 800px;  
+            }
+            .space{
+                margin-top: 75px;
+            }
+            .btn{
+                width: 140px;
+                height: 60px;
+            }
+        </style>
     </head>
     <body>
-        
+        <main>
+            <div class="container">
+                <section class="card glass">
+                    <h1 class="title space">CADASTRO</h1>
+                    <form id="info">
+                        <div class="div-info">
+                            <label for="ipt-nome"><i class="fa-regular fa-user"></i></label>
+                            <input required type="text" placeholder="Digite seu nome" name="nome" id="ipt-nome" class="text space">
+                        </div>
+
+                        <div class="div-info">                            
+                            <label for="ipt-cpf"><i class="fa-solid fa-id-card icone"></i></label>
+                            <input required type="text" placeholder="Digite seu CPF" name="cpf" id="ipt-cpf" class="text">
+                        </div>
+
+                        <div class="div-info">
+                            <label for="ipt-email"><i class="fa-regular fa-envelope"></i></label>
+                            <input required type="email" placeholder="Digite seu email" name="email" id="ipt-email" class="text">
+                        </div>
+
+                        <div class="div-info">
+                            <label for="ipt-senha"><i class="fa-solid fa-unlock"></i></label>
+                            <input required type="password" placeholder="Digite sua senha" name="senha" id="ipt-senha" class="text">
+                        </div>
+
+                        <div class="info-bottom">
+                            <select name="sx" id="slt-sx" class="slt" required>
+                                <option class="opt" value="" selected disabled hidden>Selecione seu sexo</option>
+                                <option class="opt" value="M">Masculino</option>
+                                <option class="opt" value="F">Feminino</option>
+                                <option class="opt" value="O">Outros</option>
+                            </select>
+                            <a href="index.html">Já tem cadastro?</a>
+                        </div>
+
+                    </form>
+                    <button id="btn-login" class="btn glass" type="submit" form="info">CADASTRAR</button>
+                </section>
+            </div>
+        </main>
     </body>
-    <script src=""></script>
+    <script src="script.js"></script>
 </html>
