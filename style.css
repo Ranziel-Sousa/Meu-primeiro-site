@@ -13,7 +13,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background:
     radial-gradient(circle at 15% 20%, #7c3aed 0%, transparent 45%),
     radial-gradient(circle at 85% 15%, #14b8a6 0%, transparent 42%),
@@ -113,4 +113,11 @@ main{
 }
 .erro.desligado{
     display: block;
+}
+@media screen and (max-width: 1535px){
+    .card{  
+      width: 500px;
+      height: 750px;
+      background-color: #ec4899;
+    }
 }
