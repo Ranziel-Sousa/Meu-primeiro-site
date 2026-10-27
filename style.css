@@ -31,7 +31,6 @@ main{
     inset 0 1px 0 rgba(255, 255, 255, 0.40);
     color: #fff;
 }
-
 .card{    
     position: relative;
     display: flex;
@@ -64,12 +63,9 @@ main{
     border-bottom: 1px #fff solid;
 }
 .text{
+    background-color: rgba(0, 0, 0, 0);
     caret-color: #fff;
     color: #fff;
-    margin: 0 10px;
-    width: 200px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0);
     border: none;
     outline: none;
 }
@@ -114,10 +110,203 @@ main{
 .erro.desligado{
     display: block;
 }
-@media screen and (max-width: 1535px){
-    .card{  
-      width: 500px;
-      height: 750px;
-      background-color: #ec4899;
+/* =====================================================
+   RESPONSIVO — LOGIN (index.html) e CADASTRO (cadastro.html)
+   Cole este bloco no FIM do style.css e APAGUE o
+   @media (max-width: 1535px) antigo (ele pintava o card de rosa).
+
+   Os seletores usam ".container .classe" de propósito:
+   o <style> dentro do cadastro.html redefine .card, .btn e
+   .space e, sem a especificidade extra, ele venceria.
+   ===================================================== */
+
+
+/* ---------- BASE (necessário para o responsivo funcionar) ---------- */
+
+/* o container ocupa a tela toda e cresce junto com o card */
+.container {
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* a foto agora escala sozinha junto com o tamanho do .ft */
+.ft {
+    background-size: 137.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ---------- NOTEBOOK (até 1535px) ---------- */
+@media screen and (max-width: 1535px) {
+    .container .card {
+        width: 460px;
+        height: 720px;
+    }
+}
+
+
+/* ---------- TELAS BAIXAS (notebook 1366x768, janela pequena) ---------- */
+@media screen and (max-height: 800px) and (min-width: 769px) {
+    .container {
+        padding: 16px 0;
+    }
+    .container .card {
+        height: auto;
+        min-height: 560px;
+        padding: 10px 10px 40px;
+    }
+    .container .title {
+        margin: 15px;
+        font-size: 40px;
+    }
+    .container .space {
+        margin-top: 20px;
+    }
+    .container .ft {
+        width: 150px;
+        height: 150px;
+    }
+    .container .data {
+        margin-top: 30px;
+    }
+    .container .div-info {
+        margin-bottom: 28px;
+    }
+    .container .btn {
+        top: 0;
+        margin-top: 24px;
+    }
+}
+
+
+/* ---------- TABLET (até 768px) ---------- */
+@media screen and (max-width: 768px) {
+    .container .card {
+        width: 90%;
+        max-width: 480px;
+        height: auto;
+        min-height: 640px;
+        padding: 20px 20px 40px;
+        border-radius: 70px;
+    }
+    .container .title {
+        margin: 20px;
+        font-size: 42px;
+    }
+    .container .space {
+        margin-top: 30px;
+    }
+    .container .ft {
+        width: 170px;
+        height: 170px;
+    }
+    .container .div-info {
+        margin-bottom: 36px;
+    }
+    /* o botão deixa de "flutuar" para fora do card */
+    .container .btn {
+        top: 0;
+        margin-top: 30px;
+    }
+}
+
+
+/* ---------- CELULAR (até 480px) ---------- */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 16px 12px;
+    }
+    .container .card {
+        width: 100%;
+        min-height: 0;
+        padding: 16px 12px 36px;
+        border-radius: 48px;
+    }
+    .container .title {
+        margin: 16px;
+        font-size: 34px;
+    }
+    .container .space {
+        margin-top: 16px;
+    }
+    .container .perfil {
+        margin-top: 8px;
+    }
+    .container .ft {
+        width: 130px;
+        height: 130px;
+    }
+    .container .data {
+        margin-top: 30px;
+    }
+    .container .div-info {
+        margin-bottom: 28px;
+    }
+    .container .text {
+        width: 200px;
+        font-size: 16px; /* 16px evita o zoom automático do iPhone */
+    }
+    /* "Já tem cadastro?" / "Lembrar senha?" empilham em vez de estourar */
+    .container .info-bottom {
+        flex-flow: column;
+        height: auto;
+        gap: 12px;
+    }
+    .container .slt {
+        font-size: 16px;
+    }
+    .container .btn {
+        width: 130px;
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+
+/* ---------- CELULAR PEQUENO (até 360px) ---------- */
+@media screen and (max-width: 360px) {
+    .container {
+        padding: 12px 8px;
+    }
+    .container .card {
+        border-radius: 36px;
+        padding: 12px 8px 30px;
+    }
+    .container .title {
+        font-size: 28px;
+    }
+    .container .ft {
+        width: 110px;
+        height: 110px;
+    }
+    .container .text {
+        width: 165px;
+    }
+}
+
+
+/* ---------- CELULAR DEITADO (paisagem) ---------- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .container {
+        align-items: flex-start;
+    }
+    .container .card {
+        min-height: 0;
+        margin: 10px 0;
+    }
+    .container .ft {
+        width: 100px;
+        height: 100px;
+    }
+    .container .title {
+        font-size: 30px;
+        margin: 10px;
+    }
+    .container .data {
+        margin-top: 16px;
+    }
+    .container .div-info {
+        margin-bottom: 20px;
     }
 }
